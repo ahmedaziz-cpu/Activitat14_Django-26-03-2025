@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pàgina d'Inici</title>
+</head>
+<body>
+    <h1>Benvingut</h1>
+    {% if user.is_authenticated %}
+        <p>Hola {{ user.username }}!</p>
+        <a href="{% url 'logout' %}">Tancar Sessió</a>
+    {% else %}
+        <a href="{% url 'login' %}">Iniciar Sessió</a>
+    {% endif %}
+</body>
+</html>
+
